@@ -126,7 +126,7 @@ class AuthController {
 
     // update token in db
     try {
-      tokenService.updateRefreshToken(userData._id, refreshToken);
+      await tokenService.updateRefreshToken(userData._id, refreshToken);
     } catch (error) {
       return res.status(500).json({ message: "internal error" });
     }
