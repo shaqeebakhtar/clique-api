@@ -26,12 +26,6 @@ const io = require("socket.io")(server, {
 
 app.use(cookieParser());
 
-// [
-//   "http://localhost:5173/",
-//   "http://localhost:5500/",
-//   "https://clique.onrender.com",
-//   "http://127.0.0.1:5173/",
-// ]
 const corsOption = {
   optionsSuccessStatus: 200,
   credentials: true,
