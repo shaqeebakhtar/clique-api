@@ -43,8 +43,8 @@ connectDB();
 app.use(express.json({ limit: "5mb" }));
 app.use(router);
 
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "../dist", "index.html"));
+app.get("/*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "/dist", "index.html"));
 });
 
 // sockets
