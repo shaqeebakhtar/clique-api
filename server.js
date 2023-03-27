@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
+const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 5500;
 
@@ -43,8 +44,11 @@ connectDB();
 app.use(express.json({ limit: "5mb" }));
 app.use(router);
 
-app.get("/*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "client/dist", "index.html"));
+app.use(express.static(path.join(__dirname, "dist")));
+
+// Catch-all route handler
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // sockets
