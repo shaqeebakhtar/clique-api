@@ -44,7 +44,7 @@ app.use(express.json({ limit: "5mb" }));
 app.use(router);
 
 app.get("/*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "/dist", "index.html"));
+  res.sendFile(path.resolve(__dirname, "client/dist", "index.html"));
 });
 
 // sockets
